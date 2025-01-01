@@ -14,7 +14,7 @@ const CreatePost = () => {
   const fetchPost = async () => {
     if (!id) return;
     try {
-      const response = await fetch(`${BACKEND_URL}/blog/${id}`, {
+      const response = await fetch(`${BACKEND_URL}blog/${id}`, {
         method: "GET",
         credentials: "include", // Send credentials with the request
       });
@@ -53,7 +53,7 @@ const CreatePost = () => {
     try {
       setIsSubmitting(true);
       const method = id ? "PUT" : "POST";
-      const url = id ? `${BACKEND_URL}/blog/${id}` : `${BACKEND_URL}/createblog`;
+      const url = id ? `${BACKEND_URL}blog/${id}` : `${BACKEND_URL}createblog`;
 
       const response = await fetch(url, {
         method,

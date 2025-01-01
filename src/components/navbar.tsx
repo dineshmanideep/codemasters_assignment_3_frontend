@@ -19,7 +19,7 @@ const Navbar = () => {
     const fetchuser = async () => {
         try {
             console.log("fetching user using effect")
-            const response = await fetch(`${BACKEND_URL}/`, {
+            const response = await fetch(`${BACKEND_URL}`, {
                 method: 'GET',
                 credentials: 'include', 
               })
@@ -55,7 +55,7 @@ const Navbar = () => {
     const handlelogout = async () => {
         console.log("logout hitted")
         try {
-            const response = await fetch(`${BACKEND_URL}/logout`, {
+            const response = await fetch(`${BACKEND_URL}logout`, {
                 method: 'GET',
                 credentials: 'include', 
               })

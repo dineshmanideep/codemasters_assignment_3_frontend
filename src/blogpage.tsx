@@ -35,7 +35,7 @@ const Blogpage = () => {
   // Fetch user data
   const fetchUser = async () => {
     try {
-      const response = await fetch(`${BACKEND_URL}/`, {
+      const response = await fetch(`${BACKEND_URL}`, {
         method: 'GET',
         credentials: 'include',
       });
@@ -67,7 +67,7 @@ const Blogpage = () => {
 
     const fetchPost = async () => {
       try {
-        const response = await fetch(`${BACKEND_URL}/blog/${id}`,{
+        const response = await fetch(`${BACKEND_URL}blog/${id}`,{
           method: 'GET',
           credentials: 'include',
         });
