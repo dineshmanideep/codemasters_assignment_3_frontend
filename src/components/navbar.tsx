@@ -10,7 +10,7 @@ type User={
     password:string
     
 }
-const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:3000';
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL ;
 
 const Navbar = () => {
     const [user, setuser] = useState<User|null>(null)
@@ -19,6 +19,8 @@ const Navbar = () => {
     const fetchuser = async () => {
         try {
             console.log("fetching user using effect")
+            console.log(BACKEND_URL);
+            console.log(`${BACKEND_URL}`);
             const response = await fetch(`${BACKEND_URL}`, {
                 method: 'GET',
                 credentials: 'include', 
@@ -55,6 +57,8 @@ const Navbar = () => {
     const handlelogout = async () => {
         console.log("logout hitted")
         try {
+            console.log(BACKEND_URL);
+            console.log(`${BACKEND_URL}logout`);
             const response = await fetch(`${BACKEND_URL}logout`, {
                 method: 'GET',
                 credentials: 'include', 

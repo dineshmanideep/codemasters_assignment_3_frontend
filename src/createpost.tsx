@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import Navbar from "./components/navbar";
 
-const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:3000';
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL ;
 const CreatePost = () => {
   const [title, setTitle] = useState("");
   const [imageUrl, setImageUrl] = useState("");
@@ -14,6 +14,8 @@ const CreatePost = () => {
   const fetchPost = async () => {
     if (!id) return;
     try {
+      console.log(BACKEND_URL);
+      console.log(`${BACKEND_URL}blog/${id}`);
       const response = await fetch(`${BACKEND_URL}blog/${id}`, {
         method: "GET",
         credentials: "include", // Send credentials with the request
@@ -51,6 +53,9 @@ const CreatePost = () => {
     };
 
     try {
+      console.log(BACKEND_URL);
+      console.log(`${BACKEND_URL}blog/${id}`);
+      console.log(`${BACKEND_URL}createblog`);
       setIsSubmitting(true);
       const method = id ? "PUT" : "POST";
       const url = id ? `${BACKEND_URL}blog/${id}` : `${BACKEND_URL}createblog`;

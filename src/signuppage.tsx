@@ -9,7 +9,7 @@ type User={
     password:string
    
 }
-const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:3000';
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL ;
 
 const Signup = () => {
     const [user, setuser] = useState<User>({
@@ -37,6 +37,9 @@ const Signup = () => {
         const body={
             ...user
         }
+        
+            console.log(BACKEND_URL)
+            console.log(`${BACKEND_URL}/signup`)
         const response= await fetch(`${BACKEND_URL}/signup`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
