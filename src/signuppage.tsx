@@ -5,7 +5,7 @@ type User={
     id?:number,
     username:string
     email:string
-    age:number
+    age?:number
     password:string
    
 }
@@ -16,7 +16,7 @@ const Signup = () => {
         
         username:"",
         email:"",
-        age:null,
+        
         password:""
     })
 
