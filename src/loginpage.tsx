@@ -28,7 +28,8 @@ const Loginpage = () => {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(body),
-                 credentials: 'include'
+                 credentials: 'include',
+                
             })
             console.log(response)
     
