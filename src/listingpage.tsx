@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import Card from './card';
 
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:3000';
+
 type BlogCard = {
   title: string;
   id: number;
@@ -17,7 +19,7 @@ const Listingpage = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch('http://localhost:3000/blogs');
+      const response = await fetch(`${BACKEND_URL}/blogs`);
       const data = await response.json();
       console.log("Fetched blogs:", data);
       setBlogs(data); // Update state with fetched data

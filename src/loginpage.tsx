@@ -1,6 +1,7 @@
 import  { useState } from 'react'
 import Navbar from './components/navbar'
 
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:3000';
 
 const Loginpage = () => {
     const [username, setusername] = useState("")
@@ -22,7 +23,7 @@ const Loginpage = () => {
             password:Password
         }
         try {
-            const response= await fetch('http://localhost:3000/login', {
+            const response= await fetch(`${BACKEND_URL}/login`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(body),

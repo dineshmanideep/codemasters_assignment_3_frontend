@@ -2,6 +2,10 @@ import  { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom'; // To access the post ID from the URL
 import Navbar from './components/navbar';
 
+
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:3000';
+
+
 type User = {
   id: number;
   username: string;
@@ -31,7 +35,7 @@ const Blogpage = () => {
   // Fetch user data
   const fetchUser = async () => {
     try {
-      const response = await fetch('http://localhost:3000/', {
+      const response = await fetch(`${BACKEND_URL}`, {
         method: 'GET',
         credentials: 'include',
       });
@@ -63,7 +67,7 @@ const Blogpage = () => {
 
     const fetchPost = async () => {
       try {
-        const response = await fetch(`http://localhost:3000/blog/${id}`);
+        const response = await fetch(`${BACKEND_URL}/blog/${id}`);
         const data = await response.json();
         if (response.ok) {
           setPost(data);
