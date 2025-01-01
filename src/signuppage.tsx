@@ -37,7 +37,7 @@ const Signup = () => {
         const body={
             ...user
         }
-        const response= await fetch(`${BACKEND_URL}signup`, {
+        const response= await fetch(`${BACKEND_URL}/signup`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(body),

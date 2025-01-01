@@ -19,7 +19,7 @@ const Listingpage = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch(`${BACKEND_URL}blogs`,{
+      const response = await fetch(`${BACKEND_URL}/blogs`,{
         method: 'GET',
         credentials: 'include',
       });
