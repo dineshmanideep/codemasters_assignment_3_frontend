@@ -59,7 +59,7 @@ const Navbar = () => {
         try {
             console.log(BACKEND_URL);
             console.log(`${BACKEND_URL}logout`);
-            const response = await fetch(`${BACKEND_URL}logout`, {
+            const response = await fetch(`${BACKEND_URL}/logout`, {
                 method: 'GET',
                 credentials: 'include', 
               })

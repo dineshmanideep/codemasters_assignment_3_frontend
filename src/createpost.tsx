@@ -15,8 +15,8 @@ const CreatePost = () => {
     if (!id) return;
     try {
       console.log(BACKEND_URL);
-      console.log(`${BACKEND_URL}blog/${id}`);
-      const response = await fetch(`${BACKEND_URL}blog/${id}`, {
+      console.log(`${BACKEND_URL}/blog/${id}`);
+      const response = await fetch(`${BACKEND_URL}/blog/${id}`, {
         method: "GET",
         credentials: "include", // Send credentials with the request
       });
@@ -58,7 +58,7 @@ const CreatePost = () => {
       console.log(`${BACKEND_URL}createblog`);
       setIsSubmitting(true);
       const method = id ? "PUT" : "POST";
-      const url = id ? `${BACKEND_URL}blog/${id}` : `${BACKEND_URL}createblog`;
+      const url = id ? `${BACKEND_URL}/blog/${id}` : `${BACKEND_URL}/createblog`;
 
       const response = await fetch(url, {
         method,

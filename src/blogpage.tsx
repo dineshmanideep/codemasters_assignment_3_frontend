@@ -70,8 +70,8 @@ const Blogpage = () => {
     const fetchPost = async () => {
       try {
         console.log(BACKEND_URL);
-        console.log(`${BACKEND_URL}blog/${id}`);
-        const response = await fetch(`${BACKEND_URL}blog/${id}`,{
+        console.log(`${BACKEND_URL}/blog/${id}`);
+        const response = await fetch(`${BACKEND_URL}/blog/${id}`,{
           method: 'GET',
           credentials: 'include',
         });
