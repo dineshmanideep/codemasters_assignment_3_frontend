@@ -67,7 +67,10 @@ const Blogpage = () => {
 
     const fetchPost = async () => {
       try {
-        const response = await fetch(`${BACKEND_URL}/blog/${id}`);
+        const response = await fetch(`${BACKEND_URL}blog/${id}`,{
+          method: 'GET',
+          credentials: 'include',
+        });
         const data = await response.json();
         if (response.ok) {
           setPost(data);

@@ -22,8 +22,9 @@ const Loginpage = () => {
             username:username,
             password:Password
         }
+        console.log(body)
         try {
-            const response= await fetch(`${BACKEND_URL}/login`, {
+            const response= await fetch(`${BACKEND_URL}login`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(body),
@@ -32,7 +33,8 @@ const Loginpage = () => {
             console.log(response)
     
             if(!response.ok){
-              throw new Error(`HTTP error! Status ${response.status}`);
+               alert("wrong credentials")
+                
             }
             const data=await response.json();
             if(data.success){
@@ -40,7 +42,8 @@ const Loginpage = () => {
                 window.location.href="/";
             }
             else{
-                throw new Error("login failed");
+                alert("wrong credentials")
+                window.location.href="/login"
             }
         } catch (err) {
             console.log(err)
